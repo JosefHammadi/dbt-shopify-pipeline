@@ -1,0 +1,38 @@
+name: 'shopify'
+version: '1.0.0'
+config-version: 2
+
+
+profile: 'default'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+
+
+
+models:
+  shopify:
+    staging:
+      +materialized: view
+      +tags: ['staging', 'shopify']
+      +meta:
+        owner: 'josef'
+        domain: 'shopify'
+
+    marts:
+      +materialized: table
+      +tags: ['marts', 'shopify']
+      +meta:
+        owner: 'josef'
+        domain: 'shopify'
