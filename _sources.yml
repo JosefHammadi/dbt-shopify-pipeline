@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_shopify
+    database: inbound-study-493719-b9
+    schema: raw_shopify
+    tables:
+      - name: customers
+        columns:
+          - name: id
+            tests: 
+              - not_null
+              - unique
+
+      - name: inventory_items
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+              
+      - name: orders
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+              
+      - name: products
+        columns:
+          - name: id
+            tests:
+              - not_null 
+              - unique 
+            
+            
